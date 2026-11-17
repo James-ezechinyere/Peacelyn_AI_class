@@ -2,11 +2,16 @@ from abc import ABC, abstractmethod
 
 class AIProvider(ABC):
     @abstractmethod
-    def generate_response(self, prompt: str, model_name: str) -> str:
-        """Sends student prompt to the LLM and returns the text response."""
+    def chat(self, messages: list[dict], model_name: str, system_instruction: str = "") -> str:
+        """Handles multi-turn conversational chat."""
         pass
 
     @abstractmethod
-    def evaluate_prompt(self, student_prompt: str, llm_output: str, grade_class: str, capstone_info: dict) -> tuple:
-        """Runs the LLM Judge evaluation and returns (score, evaluation_dict)."""
+    def research_with_reasoning(self, messages: list[dict], model_name: str) -> tuple[str, str]:
+        """Returns (thought_summary, final_research_response) for SS2."""
+        pass
+
+    @abstractmethod
+    def generate_image(self, prompt: str, aspect_ratio: str = "1:1") -> tuple[bytes | None, str]:
+        """Returns (image_bytes, text_caption) for JS1/JS3."""
         pass

@@ -1529,6 +1529,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "openai" },
     { name = "python-dotenv" },
+    { name = "requests" },
     { name = "streamlit" },
     { name = "supabase" },
 ]
@@ -1540,6 +1541,7 @@ requires-dist = [
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "openai", specifier = ">=3.31.0" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
+    { name = "requests", specifier = ">=2.34.2" },
     { name = "streamlit", specifier = ">=1.65.0" },
     { name = "supabase", specifier = ">=2.33.0" },
 ]
